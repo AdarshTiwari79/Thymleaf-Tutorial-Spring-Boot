@@ -5,8 +5,10 @@
 <title>Fragment page</title>
 </head>
 <body>
-	<footer id="footer-fragment" th:fragment="footerFragment">
+	<footer id="footer-fragment" th:fragment="footerFragment(title,subtitle)">
 		<h1>This content is from the footer fragment tag</h1>
+		<h2 th:text="${title}"></h2>
+		<h2 th:text="${subtitle}"></h2>		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 			Accusamus facilis cumque ipsum corporis laboriosam iusto voluptas
 			tempore consectetur in ratione cupiditate fugiat quasi. Dolorem
