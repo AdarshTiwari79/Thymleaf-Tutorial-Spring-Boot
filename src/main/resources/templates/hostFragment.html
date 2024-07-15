@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Host Fragment</title>
+</head>
+<body>
+	<h1>This is host fragment content directly displayed from host
+		fragment</h1>
+
+	<footer id="host-footer" th:include="fragmentFooter::footerFragment"></footer>
+
+	<p>We can use th:insert, th:replace in place of th:include.</p>
+	<p>The difference in these is. include simply copy the body of
+		fragment tag to the host tag. insert copy the complete body of
+		fragment tag along with tag in host tag. replace change the host tag
+		with fragment tag</p>
+
+</body>
+</html>
