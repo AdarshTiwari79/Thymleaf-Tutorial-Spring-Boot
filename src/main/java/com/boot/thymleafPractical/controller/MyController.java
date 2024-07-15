@@ -1,5 +1,6 @@
 package com.boot.thymleafPractical.controller;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -47,8 +48,10 @@ public class MyController {
 	// for fragment implementation
 	
 	@GetMapping("/host-fragment")
-	public String fragmentHandler() {
+	public String fragmentHandler(Model model) {
 		System.out.println("host fragment handler is running....");
+		model.addAttribute("title","this is dynamic title");
+		model.addAttribute("sub",LocalDateTime.now().toString());		
 		return "hostFragment";
 	}
 	
