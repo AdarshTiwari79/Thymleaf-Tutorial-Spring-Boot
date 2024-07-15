@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
+
 @Controller
 public class MyController {
 
@@ -42,5 +43,14 @@ public class MyController {
 		m.addAttribute("gen",gender);
 		return "conditional";
 	}
+	
+	// for fragment implementation
+	
+	@GetMapping("/host-fragment")
+	public String fragmentHandler() {
+		System.out.println("host fragment handler is running....");
+		return "hostFragment";
+	}
+	
 	
 }
