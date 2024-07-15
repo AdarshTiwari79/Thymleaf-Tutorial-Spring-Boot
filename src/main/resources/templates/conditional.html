@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>conditional in thymeleaf</title>
+</head>
+<body>
+	<h1>Understanding how conditional are performed in thymeleaf</h1>
+	
+
+	<!-- Here implemented conditional rendering using elvish similar to ternary operator -->
+	<ul>
+		<li th:each="n, status : ${num}"><span
+			th:text="${status.odd} ? 'odd' : 'even'"></span></li>
+	</ul>
+	
+	<!-- Here implementing conditional using th:if and th:unless -->
+	
+	<h1 th:if="${gen} == 'M'">Male</h1>
+	<h2 th:unless="${gen} == 'M'">Female</h2>
+	
+
+	<!-- Here implementing concept of switch-case in thymeleaf -->
+	
+	<div th:switch="${#lists.size(num)}">
+		<h2 th:case="'0'">List is empty</h2>
+		<h2 th:case="'1'">List contains one elements</h2>
+		<h2 th:case="*">List contains more than one elements</h2>
+	</div>
+
+
+</body>
+</html>
