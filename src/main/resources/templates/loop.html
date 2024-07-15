@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>loop in thymeleaf</title>
+</head>
+<body>
+	<h1>Understanding how iterations are performed in thymeleaf</h1>
+	<ul>
+		<li th:each="n,status : ${friends}"><span
+			th:text="${status.index+1} +' ' +${n}"></span></li>
+	</ul>
+
+	<!-- status can be used for: index, count, size, odd/even, first, last -->
+
+
+	<!-- Here implemented conditional rendering using elvish similar to ternary operator -->
+	<ul>
+		<li th:each="n, status : ${friends}"><span
+			th:text="${status.odd} ? 'odd' : 'even'"></span></li>
+	</ul>
+
+
+</body>
+</html>
