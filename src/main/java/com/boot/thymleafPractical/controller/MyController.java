@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -54,6 +56,14 @@ public class MyController {
 		model.addAttribute("sub",LocalDateTime.now().toString());		
 		return "hostFragment";
 	}
+	
+	// for inheritance implementation
+	@GetMapping("/inheritance")
+	public String inheritenceHandler() {
+		System.out.println("This is inheritence handler running....");
+		return "contactus";
+	}
+	
 	
 	
 }
