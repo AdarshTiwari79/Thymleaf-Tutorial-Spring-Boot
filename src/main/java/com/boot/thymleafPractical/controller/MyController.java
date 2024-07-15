@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class MyController {
 
@@ -30,4 +31,16 @@ public class MyController {
 		m.addAttribute("friends",friends);
 		return "loop";
 	}
+	
+	// Conditional in thymeleaf
+	@GetMapping("/conditional")
+	public String conditionalHandler(Model m) {
+		System.out.println("conditional handler is running....");
+		List<Integer> numbers = List.of(2,3,4,5,6,7);
+		m.addAttribute("num",numbers);
+		String gender = "F";
+		m.addAttribute("gen",gender);
+		return "conditional";
+	}
+	
 }
