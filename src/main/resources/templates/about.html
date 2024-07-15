@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Thymeleaf Based Template</title>
+</head>
+<body>
+	<h1>This template is processed and viewed using MyController's about handler</h1>
+	<!-- Accessing dynamic data from controller with the help of Thymeleaf -->
+	<h1>Name from the controller is: <span th:text="${name}"></span></h1>
+	
+	<!-- Using Object with method should include # -->
+	<h1>Name in UPPER CASE: <span th:text="${#strings.toUpperCase(name)}"></span></h1>
+	
+	<!-- Another way to access (corrected comment) -->
+	<h2 th:text="'Date from the handler is: ' + ${currentDate}"></h2>
+	
+	<!-- Here we are discussing to initialize the variable locally in a div which can be accessed only in that div --> 
+	<div th:with="a=5, b=8, n=${name}">
+		<h2 th:text="'Accessing local variable declared in div: ' + ${n}"></h2>
+		<h2>Value of a = <span th:text="${a}"></span></h2>
+		<h2>Value of b = <span th:text="${b}"></span></h2>
+	</div>
+</body>
+</html>
