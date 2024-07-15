@@ -8,7 +8,7 @@
 	<h1>This is host fragment content directly displayed from host
 		fragment</h1>
 
-	<footer id="host-footer" th:include="fragmentFooter::footerFragment"></footer>
+	<footer id="host-footer" th:include="fragmentFooter::footerFragment(${title},${sub})"></footer>
 
 	<p>We can use th:insert, th:replace in place of th:include.</p>
 	<p>The difference in these is. include simply copy the body of
